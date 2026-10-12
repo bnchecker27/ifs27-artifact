@@ -1,0 +1,9 @@
+\begingroup\raggedright
+\begin{itemize}[nosep,leftmargin=*]
+\item \prop{infl}: \emph{Structural reasoning.} \bprint{INFL(PrtDriver, Problem1|PTROFFLINE)∧ P(Problem1=No\_Output|PrtDriver=No) ≥0.5} Yes, the printer driver influences the symptom and the conditional failure probability is at least 0.5.
+\item \prop{map\_conf}: \emph{MAP and MPE.} \bprint{P(MAP(NetPrint, NetOK|Problem1=No\_Output)|Problem1=No\_Output) >=0.5-0.01} The confidence in the most probable explanation is at least 0.49 (within one percentage point of half).
+\item \prop{map\_update}: \emph{MAP and MPE.} \bprint{P(MAP(NetPrint, NetOK|Problem1=No\_Output) [AppOK=Incorrect\_Corrupt↦0.5]↔MAP(NetPrint, NetOK|Problem1=No\_Output))=1} The diagnosis is unchanged with certainty: a local printer with an operational network.
+\item \prop{prob\_delta}: \emph{What-if analysis.} \bprint{P(Problem1=No\_Output) [PrtCbl=Loose↦0.5]− P(Problem1=No\_Output)} The failure probability increases by 0.1680.
+\item \prop{prob\_offline}: \emph{What-if analysis.} \bprint{P(Problem1=No\_Output|PTROFFLINE=Offline∨ ¬(PrtOn=Yes)) [PrtCbl=Loose↦0.5] [PrtMem=Less\_than\_2Mb↦0.4] ≥0.6} Yes, the probability is at least 0.6 under both parameter updates.
+\end{itemize}
+\endgroup

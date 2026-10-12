@@ -1,0 +1,38 @@
+network unknown {
+}
+variable Difficulty {
+  type discrete [ 2 ] { Easy, Difficult };
+}
+variable Intelligence {
+  type discrete [ 2 ] { Low, High };
+}
+variable Grade {
+  type discrete [ 3 ] { Low, Medium, High };
+}
+variable SAT {
+  type discrete [ 2 ] { Low, High };
+}
+variable Letter {
+  type discrete [ 2 ] { Weak, Strong };
+}
+probability ( Difficulty ) {
+  table 0.6, 0.4;
+}
+probability ( Intelligence ) {
+  table 0.7, 0.3;
+}
+probability ( Grade | Intelligence, Difficulty ) {
+  (Low, Easy) 0.3, 0.4, 0.3;
+  (Low, Difficult) 0.7, 0.25, 0.05;
+  (High, Easy) 0.02, 0.08, 0.9;
+  (High, Difficult) 0.3, 0.2, 0.5;
+}
+probability ( SAT | Intelligence ) {
+  (Low) 0.95, 0.05;
+  (High) 0.2, 0.8;
+}
+probability ( Letter | Grade) {
+  (Low) 0.99, 0.01;
+  (Medium) 0.4, 0.6;
+  (High) 0.1, 0.9;
+}

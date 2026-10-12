@@ -1,0 +1,27 @@
+name;model;property;description
+grades_prob_intervention;grades;P(Letter=Strong|Grade=High)≥0.7[Grade=High|Intelligence=High,Difficulty=Difficult↦0.9];What is the probability of a strong letter given a high grade with intervention?
+grades_map_int_sat;grades;P(MAP(Intelligence,SAT|Letter=Strong)|Letter=Strong)>=0.5-0.01;Does the most probable joint intelligence and SAT state given a strong letter account for at least 0.49 of the posterior mass?
+grades_prob_idp;grades;P(Letter=Strong|Grade=High)≥0.8∧IDP(Intelligence,Letter|Grade);Is the probability of a strong letter at least 0.8 given a high grade, and are intelligence and letter grade independent given grade?
+munin_prob_cond;munin;P(DIFFN_SEV=MOD|R_LNLW_MED_SEV=SEV)<=0.05∧INFL(R_LNLW_MED_SEV,R_LNLW_APB_MALOSS);Is moderate diffuse severity below 5% under severe median findings, and does median severity influence APB muscle loss?
+munin_map;munin;MAP(DIFFN_PATHO,DIFFN_TYPE|R_LNLW_MED_SEV=SEV);What are the most probable pathology and type given a severe finding?
+munin_combined_idp;munin;P(MAP(DIFFN_DISTR,DIFFN_TYPE|R_LNLW_MED_SEV=SEV)|R_LNLW_MED_SEV=SEV)>=0.8∧IDP(DIFFN_TIME,DIFFN_SEV|DIFFN_PATHO);Is the most probable distribution and type of neuropathy likely for a severe finding and is disease duration independent of severity given the pathology?
+andes_infl_idp;andes;INFL(DISPLACEM0,RApp1)∧IDP(DISPLACEM0,GRAV2);Does the displacement skill influence its rule application while displacement and gravity skills are mutually independent?
+andes_map_nodes;andes;MAP(DISPLACEM0,GRAV2|GOAL_2=true);What are the most probable values of displacement and gravity given goal achievement?
+andes_mpe_goal;andes;MPE(GOAL_2=true);What is the most probable explanation for goal achievement?
+link_prob_allele;link;P(D0_56_d_p=a)>=0.0001∧INFL(N56_d_g,D0_56_d_p);Is paternal allele a at least 0.0001 likely, and does the offspring genotype influence it?
+link_map_genotype;link;MAP(N56_d_g,N56_d_m|D0_56_d_p=a);What are the most probable genotype values given allele A?
+link_combined_idp;link;P(MAP(D0_57_d_p|D0_56_d_p=a)|D0_56_d_p=a)>=0.7∧IDP(D0_56_d_p,D0_57_d_p|N56_d_g)∧INFL(N56_d_g,D0_57_d_p|D0_56_d_p);Is the child's most probable phenotype likely for an affected parent and are both phenotypes independent given the parental genotype it still influences?
+insurance_map_multi;insurance;P(MAP(Accident,Theft,ThisCarDam|Age=Senior∧SocioEcon=Wealthy)|Age=Senior∧SocioEcon=Wealthy)>=0.9-0.1;Does the most probable accident, theft and damage scenario for a wealthy senior driver account for at least 0.8 of the posterior mass?
+insurance_prob_complex_bool;insurance;P((Accident=Severe∧ThisCarDam=Severe)∨(Theft=True∧PropCost=Million)|Age=Senior)>=0.05;Is the probability of severe own-car damage or a million-cost theft at least 0.05 for a senior driver?
+insurance_idp_multi;insurance;!IDP(Accident,ThisCarDam|Antilock,Cushioning);Are accident severity and own-car damage still dependent given antilock braking and cushioning?
+pigs_prob_nested;pigs;P((p630400490=0∧p48124091=0)∨(p630400490=2∧p48124091=2))>0.2;Is the probability of concordant allele configurations at least 0.2?
+pigs_mpe_simple;pigs;MPE(p630400490=1);What is the most probable explanation for the first variable being 1?
+pigs_idp_simple;pigs;P(p627270088=2)>0.2∧IDP(p48124091,p627270088|p630400490);Is allele state 2 of marker p627270088 at least 0.2 likely, and are the two markers independent given p630400490?
+pathfinder_prob_complex;pathfinder;P(Fault=Tuberculosis|F1=Present∧F2=Yes)>0.9;Is tuberculosis the certain diagnosis when findings F1 and F2 are both present?
+pathfinder_map;pathfinder;P(MAP(F1|Fault=Tuberculosis)|Fault=Tuberculosis)>=0.9-0.01;Does the most probable F1 finding under tuberculosis account for at least 0.89 of the posterior mass?
+pathfinder_idp;pathfinder;P(Fault=Tuberculosis|F1=Present)>0.9∧IDP(F1,F2|Fault);Is tuberculosis likely given F1 present, and are the two findings independent given the disease class?
+win95_infl;win95;INFL(PrtDriver,Problem1|PTROFFLINE)∧P(Problem1=No_Output|PrtDriver=No)≥0.5;Is the printer driver relevant for the no-output symptom given the offline status, and is the failure probability at least 0.5 when no driver is installed?
+win95_map_conf;win95;P(MAP(NetPrint,NetOK|Problem1=No_Output)|Problem1=No_Output)>=0.5-0.01;Does the most probable network print explanation given no output account for at least (half minus one percentage point) of the posterior mass?
+win95_map_update;win95;P(MAP(NetPrint,NetOK|Problem1=No_Output)[AppOK=Incorrect_Corrupt↦0.5]↔MAP(NetPrint,NetOK|Problem1=No_Output))=1;Is the most probable network print setting unchanged (with probability 1) when the probability of a corrupt application is set to 0.5?
+win95_prob_delta;win95;P(Problem1=No_Output)[PrtCbl=Loose↦0.5]−P(Problem1=No_Output);By how much does the probability of no output increase when the probability of a loose printer cable is set to 0.5?
+win95_prob_offline;win95;P(Problem1=No_Output|PTROFFLINE=Offline∨¬(PrtOn=Yes))[PrtCbl=Loose↦0.5][PrtMem=Less_than_2Mb↦0.4]≥0.6;Is the probability of no output at least 0.6 when the printer is offline or switched off, under a loose-cable probability of 0.5 and a low-memory probability of 0.4?

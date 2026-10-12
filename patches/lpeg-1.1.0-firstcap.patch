@@ -1,0 +1,22 @@
+lpeg 1.1.0: initialize CapState.firstcap in the match-time (Cmt) path
+
+`runtimecap` is called from the VM's ICloseRunTime handler with a fresh
+CapState whose `firstcap` is never initialized — it is only assigned in
+`getcaptures` (the match-end path).  An accumulator capture (`patt % f`)
+nested inside a `lpeg.Cmt` group then reads stack garbage in
+`accumulatorcap` ("no previous value for accumulator capture" or silent
+misbehaviour), depending on the build's stack layout.  Set it to the
+slot where the first nested captured value will go, matching the
+`getcaptures` convention.
+
+Upstream bug — drop this patch once an lpeg release ships the fix.
+--- a/lpcap.c
++++ b/lpcap.c
+@@ -342,6 +342,7 @@
+   pushluaval(cs);  /* push function to be called */
+   lua_pushvalue(L, SUBJIDX);  /* push original subject */
+   lua_pushinteger(L, s - cs->s + 1);  /* push current position */
++  cs->firstcap = lua_gettop(L) + 1;  /* where first nested value goes */
+   n = pushnestedvalues(cs, 0);  /* push nested captures */
+   lua_call(L, n + 2, LUA_MULTRET);  /* call dynamic function */
+   if (id > 0) {  /* are there old dynamic captures to be removed? */

@@ -1,0 +1,7 @@
+\begingroup\raggedright
+\begin{itemize}[nosep,leftmargin=*]
+\item \prop{idp\_multi}: \emph{Structural reasoning.} \bprint{!IDP(Accident, ThisCarDam|Antilock, Cushioning)} Accident and damage stay dependent given the safety features.
+\item \prop{map\_multi}: \emph{MAP and MPE.} \bprint{P(MAP(Accident, Theft, ThisCarDam|Age=Senior∧ SocioEcon=Wealthy)|Age=Senior∧ SocioEcon=Wealthy) >=0.9-0.1} The most probable explanation covers at least 0.8 of the mass.
+\item \prop{prob\_complex\_bool}: \emph{Marginal and conditional inference.} \bprint{P((Accident=Severe∧ ThisCarDam=Severe)∨ (Theft=True∧ PropCost=Million)|Age=Senior) >=0.05} Severe damage or a costly theft occurs with probability at least 0.05.
+\end{itemize}
+\endgroup

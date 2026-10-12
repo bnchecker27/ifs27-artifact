@@ -1,0 +1,7 @@
+\begingroup\footnotesize\raggedright
+\begin{itemize}[nosep,leftmargin=*]
+\item \prop{map\_int\_sat}: \emph{MAP and MPE.} \bprint{P(MAP(Intelligence, SAT|Letter=Strong)|Letter=Strong) >=0.5-0.01} The result is yes (actual: 0.52).
+\item \prop{prob\_idp}: \emph{Combined verification.} \bprint{P(Letter=Strong|Grade=High) ≥0.8∧ IDP(Intelligence, Letter|Grade)} The probability is at least 0.8 and intelligence and letter grade are independent given grade.
+\item \prop{prob\_intervention}: \emph{What-if analysis.} \bprint{P(Letter=Strong|Grade=High) ≥0.7 [Grade=High|Intelligence=High, Difficulty=Difficult↦0.9]} The probability is at least 0.7.
+\end{itemize}
+\endgroup

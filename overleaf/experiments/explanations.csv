@@ -1,0 +1,27 @@
+name;explanation;statement
+grades_prob_intervention;Yes, the probability is at least 0.7;
+grades_map_int_sat;yes (actual: 0.52);The most probable explanation covers at least 0.49 of the mass.
+grades_prob_idp;Yes, the probability is at least 0.8 and intelligence and letter grade are independent given grade;
+munin_prob_cond;yes to both (0.03);Moderate severity stays below 5% and median severity drives APB muscle loss.
+munin_map;Specific pathology types;
+munin_combined_idp;yes to both (0.87);The most probable distribution and type of neuropathy cover at least 0.8 of the mass and disease duration is independent of severity given the pathology.
+andes_infl_idp;yes to both;The displacement skill drives its rule application and the two skills are independent.
+andes_map_nodes;Displacement is false and gravity is false;
+andes_mpe_goal;Many intermediate nodes are true;
+link_prob_allele;yes to both (0.0002);The allele is at least 0.0001 likely and genotype-dependent.
+link_map_genotype;Genotype 1_1 with maternal allele 1;
+link_combined_idp;yes to all three (0.72);The child's most probable phenotype covers at least 0.7 of the mass and the two phenotypes are independent given the parental genotype which still influences the child.
+insurance_map_multi;yes (actual: 0.83);The most probable explanation covers at least 0.8 of the mass.
+insurance_prob_complex_bool;yes (actual: 0.069);Severe damage or a costly theft occurs with probability at least 0.05.
+insurance_idp_multi;yes --- dependent;Accident and damage stay dependent given the safety features.
+pigs_prob_nested;yes (actual: 0.25);Concordant allele configurations have probability at least 0.2.
+pigs_mpe_simple;Most variables at state 0;
+pigs_idp_simple;yes to both;Allele state 2 has probability at least 0.2 and the markers are conditionally independent.
+pathfinder_prob_complex;yes (probability 1);With both findings present, tuberculosis is the certain diagnosis.
+pathfinder_map;yes (actual: 0.9);The most probable F1 state covers at least 0.89 of the mass.
+pathfinder_idp;yes to both;Tuberculosis is likely and the findings are conditionally independent.
+win95_infl;Yes, the printer driver influences the no-output symptom and the conditional failure probability is at least 0.5;Yes, the printer driver influences the symptom and the conditional failure probability is at least 0.5.
+win95_map_conf;The most probable network print explanation accounts for at least 0.49 of the posterior mass;The confidence in the most probable explanation is at least 0.49 (within one percentage point of half).
+win95_map_update;The most probable network print setting is unchanged with probability 1: no local printer and network OK;The diagnosis is unchanged with certainty: a local printer with an operational network.
+win95_prob_delta;An increase of the failure probability by 0.1680;The failure probability increases by 0.1680.
+win95_prob_offline;Yes, the probability of no output is at least 0.6 under both parameter updates;Yes, the probability is at least 0.6 under both parameter updates.

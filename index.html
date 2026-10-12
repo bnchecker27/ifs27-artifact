@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BayesL &mdash; iFS 2027 Artifact</title>
+<style>
+  body { font-family: arial, sans-serif; max-width: 46em; margin: 3em auto;
+         padding: 0 1em; line-height: 1.5; color: #222; }
+  h1 { font-size: 1.5em; }
+  .launch { display: inline-block; padding: .8em 1.6em; margin: 1em 0;
+            background: #2255aa; color: #fff; text-decoration: none;
+            border-radius: 4px; font-weight: bold; }
+  .launch:hover { background: #1a4488; }
+  .note { color: #555; font-size: .9em; }
+  code { background: #f4f4f4; padding: .1em .3em; border-radius: 3px; }
+  section { margin-top: 2em; }
+</style>
+</head>
+<body>
+<h1>BayesL &mdash; iFS 2027 Artifact</h1>
+
+<p>This is the artifact accompanying the anonymous submission
+<em>&ldquo;BayesL: A Logic for the Verification of Bayesian Networks&rdquo;</em>
+to iFS 2027.</p>
+
+<section>
+<h2>Interactive demonstrator</h2>
+<p>The demonstrator runs <strong>entirely in your browser</strong>
+(WebAssembly; a one-time download of about 3&nbsp;MB). No installation,
+no server, no data leaves your machine.</p>
+<p><a class="launch" href="gui/web/index.html">Launch the demonstrator</a></p>
+<p class="note">Tested with current Chrome, Firefox and Safari.</p>
+</section>
+
+<section>
+<h2>Code and experiments</h2>
+<p>The full artifact &mdash; model checker source, benchmark models,
+experiment definitions and pre-computed results &mdash; is in this
+repository. Download it as a zip archive via the repository view, or
+see <code>README.txt</code> for reproduction instructions.</p>
+<ul>
+  <li><code>README.txt</code> &mdash; getting started, smoke test,
+      step-by-step reproduction of the paper&rsquo;s tables</li>
+  <li><code>Dockerfile</code> &mdash; one-command environment</li>
+  <li><code>run_experiments.lua</code> &mdash; rerun all experiments</li>
+  <li><code>overleaf/experiments/</code> &mdash; experiment definitions
+      and results as reported in the paper</li>
+</ul>
+</section>
+
+<p class="note">Provided for peer-review evaluation under the terms in
+<code>LICENSE</code>.</p>
+</body>
+</html>

@@ -1,0 +1,98 @@
+\documentclass[a4paper,8pt]{article}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{seqsplit}
+% Fallbacks for the generated fragments (the paper's LuaLaTeX pipeline
+% provides the real colored versions via bayeslfmt.lua)
+\providecommand{\bprint}[1]{\texttt{#1}}
+\providecommand{\prop}[1]{\texttt{#1}}
+\DeclareUnicodeCharacter{00AC}{\ensuremath{\lnot}}
+\DeclareUnicodeCharacter{21A6}{\ensuremath{\mapsto}}
+\DeclareUnicodeCharacter{2212}{\ensuremath{-}}
+\DeclareUnicodeCharacter{2227}{\ensuremath{\land}}
+\DeclareUnicodeCharacter{2228}{\ensuremath{\lor}}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+\DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+\usepackage[round]{natbib}
+\bibliographystyle{plainnat}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\geometry{margin=0.25in}
+\renewcommand{\arraystretch}{1.0}
+\begin{document}
+
+\begin{center}
+\Large \textbf{Bayesian Network Model Checking Results}
+\end{center}
+
+\vspace{0.3cm}
+
+\noindent
+\textbf{\large grades (5 variables)}
+\input{grades.tex}
+\input{property_descriptions_full_grades.tex}
+\input{summary_table_fragment_full_grades.tex}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{\large insurance (27 variables)}
+\input{insurance.tex}
+\input{property_descriptions_full_insurance.tex}
+\input{summary_table_fragment_full_insurance.tex}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{\large win95 (76 variables)}
+\input{win95.tex}
+\input{property_descriptions_full_win95.tex}
+\input{summary_table_fragment_full_win95.tex}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{\large pathfinder (109 variables)}
+\input{pathfinder.tex}
+\input{property_descriptions_full_pathfinder.tex}
+\input{summary_table_fragment_full_pathfinder.tex}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{\large andes (223 variables)}
+\input{andes.tex}
+\input{property_descriptions_full_andes.tex}
+\input{summary_table_fragment_full_andes.tex}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{\large pigs (441 variables)}
+\input{pigs.tex}
+\input{property_descriptions_full_pigs.tex}
+\input{summary_table_fragment_full_pigs.tex}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{\large link (724 variables)}
+\input{link.tex}
+\input{property_descriptions_full_link.tex}
+\input{summary_table_fragment_full_link.tex}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{\large munin (1041 variables)}
+\input{munin.tex}
+\input{property_descriptions_full_munin.tex}
+\input{summary_table_fragment_full_munin.tex}
+
+\vspace{0.5cm}
+\bibliography{references,main}
+\end{document}

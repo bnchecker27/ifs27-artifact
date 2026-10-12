@@ -1,0 +1,7 @@
+\begingroup\footnotesize\raggedright
+\begin{itemize}[nosep,leftmargin=*]
+\item \prop{combined\_idp}: \emph{Combined verification.} \bprint{P(MAP(DIFFN\_DISTR, DIFFN\_TYPE|R\_LNLW\_MED\_SEV=SEV)|R\_LNLW\_MED\_SEV=SEV) >=0.8∧ IDP(DIFFN\_TIME, DIFFN\_SEV|DIFFN\_PATHO)} The result is yes to both (0.87).
+\item \prop{map}: \emph{MAP and MPE.} \bprint{MAP(DIFFN\_PATHO, DIFFN\_TYPE|R\_LNLW\_MED\_SEV=SEV)} The result is specific pathology types.
+\item \prop{prob\_cond}: \emph{Combined verification.} \bprint{P(DIFFN\_SEV=MOD|R\_LNLW\_MED\_SEV=SEV) <=0.05∧ INFL(R\_LNLW\_MED\_SEV, R\_LNLW\_APB\_MALOSS)} The result is yes to both (0.03).
+\end{itemize}
+\endgroup
