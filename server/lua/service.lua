@@ -2942,8 +2942,17 @@ local function token_span_at(text, caret)
                 if (c >= 48 and c <= 57) or c == 46 then j = j + 1
                 else break end
             end
+        elseif b == 92 and text:sub(i, i + 3) == "\\box" then
+            -- the \box escape is one placeholder token — a caret on it
+            -- replaces the whole sequence like a name token would
+            ident = true
+            j = i + 4
         else
             j = i + (b < 128 and 1 or b < 224 and 2 or b < 240 and 3 or 4)
+            -- a □ placeholder (U+25A1) is likewise meant to be FILLED
+            if b == 226 and text:sub(i + 1, i + 2) == "\150\161" then
+                ident = true
+            end
         end
         if caret >= i and caret < j then
             if ident then return i, j end
